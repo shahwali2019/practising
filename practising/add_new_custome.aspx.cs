@@ -37,7 +37,6 @@ namespace practising
                           ",[fname]" +
                           ",[location]" +
                           ",[haghulnashab]" +
-                          ",[Given money]" +
                           ",[year]" +
                           ",[month]" +
                           ",[day]" +
@@ -50,7 +49,6 @@ namespace practising
                           "@fname," +
                           "@location," +
                           "@haghulnashab," +
-                          "@givemoney," +
                           "@year," +
                           "@month," +
                           "@day," +
@@ -62,11 +60,10 @@ namespace practising
                         sqlcmd.Parameters.AddWithValue("@fname", txtfname.Text);
                         sqlcmd.Parameters.AddWithValue("@location", txtlocation.Text);
                         sqlcmd.Parameters.AddWithValue("@haghulnashab", txtcmoney.Text);
-                        sqlcmd.Parameters.AddWithValue("@givemoney", txtmoneypd.Text);
                         sqlcmd.Parameters.AddWithValue("@year", DropDownList1.SelectedValue);
                         sqlcmd.Parameters.AddWithValue("@month", DropDownList2.SelectedValue);
                         sqlcmd.Parameters.AddWithValue("@day", DropDownList3.SelectedValue);
-                        sqlcmd.Parameters.AddWithValue("@remain", txtremin.Text);
+                        sqlcmd.Parameters.AddWithValue("@remain", txtcomplete.SelectedValue);
                         sqlcmd.Parameters.AddWithValue("@notebook", txtnotebk.Text);
                         sqlcmd.ExecuteNonQuery();
                         msg.Visible = true;

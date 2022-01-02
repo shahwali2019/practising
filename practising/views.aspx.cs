@@ -57,7 +57,88 @@ namespace practising
         }
         protected void searchBtn_Click(object sender, EventArgs e)
         {
-            
+            txtname.Visible = false;
+            if (string.IsNullOrEmpty(txtname.Text) && string.IsNullOrEmpty(txtname.Text))
+            {
+                string connectionString = ConfigurationManager.ConnectionStrings["DBCon"].ConnectionString;
+                GridView1.DataSourceID = null;
+                string sqlQuery;
+                SqlConnection sqlCon = new SqlConnection(connectionString);
+                sqlCon.Open();
+                sqlQuery = "SELECT *FROM [addnewcustomer]";
+                SqlCommand cmd = new SqlCommand(sqlQuery, sqlCon);
+                cmd.ExecuteNonQuery();
+                SqlDataAdapter DA = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                DA.Fill(ds);
+                GridView1.DataSource = ds;
+                GridView1.DataBind();
+                sqlCon.Close();
+                int counter = GridView1.Rows.Count;
+                resultLbl.Visible = true;
+                if (counter <= 1)
+                {
+                    resultLbl.Text = "Found " + counter + " Record.";
+                }
+                else
+
+                    resultLbl.Text = "Found " + counter + " Record(s).";
+            }
+            //----------------------
+
+            if (!string.IsNullOrEmpty(txtname.Text) && txtname.Text != "")
+            {
+                string connectionString = ConfigurationManager.ConnectionStrings["DBCon"].ConnectionString;
+                GridView1.DataSourceID = null;
+                string sqlQuery;
+                SqlConnection sqlCon = new SqlConnection(connectionString);
+                sqlCon.Open();
+                sqlQuery = "SELECT *FROM [addnewcustomer] where [اسم] LIKE '%" + txtname.Text + "%' ";
+                SqlCommand cmd = new SqlCommand(sqlQuery, sqlCon);
+                cmd.ExecuteNonQuery();
+                SqlDataAdapter DA = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                DA.Fill(ds);
+                GridView1.DataSource = ds;
+                GridView1.DataBind();
+                sqlCon.Close();
+                int counter = GridView1.Rows.Count;
+                resultLbl.Visible = true;
+                if (counter <= 1)
+                {
+                    resultLbl.Text = "Found " + counter + " Record.";
+                }
+                else
+
+                    resultLbl.Text = "Found " + counter + " Record(s).";
+            }
+
+            if (string.IsNullOrEmpty(txtname.Text) && txtbod_req.SelectedValue != "sor")
+            {
+                string connectionString = ConfigurationManager.ConnectionStrings["DBCon"].ConnectionString;
+                GridView1.DataSourceID = null;
+                string sqlQuery;
+                SqlConnection sqlCon = new SqlConnection(connectionString);
+                sqlCon.Open();
+                sqlQuery = "SELECT *FROM [addnewcustomer] where [remain] = '" + txtbod_req.SelectedValue + "'";
+                SqlCommand cmd = new SqlCommand(sqlQuery, sqlCon);
+                cmd.ExecuteNonQuery();
+                SqlDataAdapter DA = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                DA.Fill(ds);
+                GridView1.DataSource = ds;
+                GridView1.DataBind();
+                sqlCon.Close();
+                int counter = GridView1.Rows.Count;
+                resultLbl.Visible = true;
+                if (counter <= 1)
+                {
+                    resultLbl.Text = "Found " + counter + " Record.";
+                }
+                else
+
+                    resultLbl.Text = "Found " + counter + " Record(s).";
+            }
         }
 
         protected void addNew_Click(object sender, ImageClickEventArgs e)
@@ -131,35 +212,7 @@ namespace practising
 
         protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-            string username = Request.Form["username"];
 
-            SqlDataAdapter sda = new SqlDataAdapter("select * from [cust_userregister] where username= '" + username + "'", connectionString);
-            DataTable dtResult = new DataTable();
-            sda.Fill(dtResult);
-
-            string userType = dtResult.Rows[0]["Access_role"].ToString();
-
-            if (e.Row.RowType == DataControlRowType.DataRow)
-            {
-
-                if (userType == "Supper Admin")
-                {
-                    e.Row.Cells[0].Enabled = true;
-                    //e.Row.Cells[1].Enabled = false;
-
-                }
-                if (userType == "Admin")
-                {
-                    e.Row.Cells[0].Enabled = true;
-                    //e.Row.Cells[1].Enabled = false;
-                }
-
-                if (userType == "Users")
-                {
-                    e.Row.Cells[0].Enabled = false;
-                    //e.Row.Cells[1].Enabled = false;
-                }
-            }
         }
 
         protected void GridView1_RowCreated(object sender, GridViewRowEventArgs e)

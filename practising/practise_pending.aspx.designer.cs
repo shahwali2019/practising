@@ -10,87 +10,96 @@
 namespace practising {
     
     
-    public partial class views {
+    public partial class practise_pending {
         
         /// <summary>
-        /// lblsuccessmessage control.
+        /// insertCheck control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblsuccessmessage;
+        protected global::System.Web.UI.WebControls.CheckBox insertCheck;
         
         /// <summary>
-        /// lblerrormessage control.
+        /// updatedCheck control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblerrormessage;
+        protected global::System.Web.UI.WebControls.CheckBox updatedCheck;
         
         /// <summary>
-        /// txtname control.
+        /// ApproveBtnImg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtname;
+        protected global::System.Web.UI.WebControls.ImageButton ApproveBtnImg;
         
         /// <summary>
-        /// txtbod_req control.
+        /// ApproveUpdateBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList txtbod_req;
+        protected global::System.Web.UI.WebControls.ImageButton ApproveUpdateBtn;
         
         /// <summary>
-        /// searchBtn control.
+        /// updateLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button searchBtn;
+        protected global::System.Web.UI.WebControls.Label updateLbl;
         
         /// <summary>
-        /// resultLbl control.
+        /// insertLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label resultLbl;
+        protected global::System.Web.UI.WebControls.Label insertLbl;
         
         /// <summary>
-        /// excelExporter control.
+        /// Gridv_LAR control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton excelExporter;
+        protected global::System.Web.UI.WebControls.GridView Gridv_LAR;
         
         /// <summary>
-        /// addNew control.
+        /// SqlCon2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton addNew;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlCon2;
         
         /// <summary>
-        /// GridView1 control.
+        /// gv3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.GridView gv3;
+        
+        /// <summary>
+        /// SqlConUpdate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlConUpdate;
     }
 }

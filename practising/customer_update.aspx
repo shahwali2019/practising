@@ -215,13 +215,13 @@
   </div>
 			</div>
 		</div>
-             <div class="col-sm-6">
+<%--             <div class="col-sm-6">
 			<div class="form-group-sm">
              <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" Font-Size="X-Small" ErrorMessage="X" ControlToValidate="txtmoneypd" ForeColor="Red" InitialValue="STATUS"></asp:RequiredFieldValidator>
 			<asp:Label ID="Label6" runat="server" Text="مقدر پرداخت اول" Font-Names="Bahnschrift" Font-Size="x-small"></asp:Label>
 			<asp:TextBox ID="txtmoneypd" runat="server" class="form-control" required="required"></asp:TextBox>
 		 </div>
-         </div>
+         </div>--%>
             <div class="col-sm-6">
 			<div class="form-group-sm">
 				<asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" Font-Size="X-Small" ErrorMessage="X" ControlToValidate="txtnotebk" ForeColor="Red" InitialValue="STATUS"></asp:RequiredFieldValidator>
@@ -230,11 +230,10 @@
 			</div>
 		</div>
         <div class="col-sm-6">
-			<div class="form-group-sm">
-				<asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" Font-Size="X-Small" ErrorMessage="X" ControlToValidate="txtremin" ForeColor="Red" InitialValue="STATUS"></asp:RequiredFieldValidator>
-				<asp:Label ID="Label8" runat="server" Text="باقی مانده" Font-Names="Bahnschrift" Font-Size="x-small"></asp:Label>
-                <asp:TextBox ID="txtremin" runat="server" type="text" class="form-control" required="required"></asp:TextBox>
-			</div>
+            <asp:DropDownList ID="txtcomplete" runat="server" Width="200px" CssClass="searchdropdown" Style="margin-bottom: 4px">
+                <asp:ListItem Value="تکمیل" >تکمیل</asp:ListItem>
+                <asp:ListItem Value="نا تکمیل">نا تکمیل</asp:ListItem>
+            </asp:DropDownList>
 		</div>
 	</div>
    

@@ -46,14 +46,14 @@ align-content: center;
       <table dir="rtl">
       <tr style="padding:10px 10px;">
          <td>
-            <asp:TextBox ID="txtcustcase" placeholder="Case Number" runat="server" Visible="false" Height="31px" Width="168px" BackColor="#FFFF99" Font-Bold="True" Font-Names="Bahnschrift" Font-Size="Small" TabIndex="2" CssClass="form-control"></asp:TextBox>
+            <asp:TextBox ID="txtname" placeholder="name" runat="server" Visible="true" Height="31px" Width="168px" BackColor="#FFFF99" Font-Bold="True" Font-Names="Bahnschrift" Font-Size="Small" TabIndex="2" CssClass="form-control"></asp:TextBox>
          </td>
           
          <td>
             <asp:DropDownList ID="txtbod_req" runat="server" CssClass="btn-info" Font-Bold="True" Font-Names="Bahnschrift" Font-Size="Small" Height="31px" Width="168px" TabIndex="4">
-               <asp:ListItem Value="sor" Selected="True">BOD Requirement</asp:ListItem>
-               <asp:ListItem Text="YES" Value="YES"></asp:ListItem>
-               <asp:ListItem Text="NO" Value="NO"></asp:ListItem>
+               <asp:ListItem Value="sor" Selected="True">Requirement</asp:ListItem>
+               <asp:ListItem Text="تکمیل" Value="تکمیل"></asp:ListItem>
+               <asp:ListItem Text="نا تکمیل" Value="ناتکمیل"></asp:ListItem>
             </asp:DropDownList>
          </td>
                              <td>

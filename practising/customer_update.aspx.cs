@@ -40,16 +40,15 @@ namespace practising
                     msg.Text = "UPDATE LAR RECORD";
 
                     //--------------------------------------------------------------   note should add from database           
-                    Session["Id"].ToString();
+                    //Session["Id"].ToString();
                     txtname.Text = Session["tname"].ToString();
                     txtfname.Text = Session["tfname"].ToString();
                     txtlocation.Text = Session["tlocation"].ToString();
                     txtcmoney.Text = Session["thaghulnashab"].ToString();
-                    txtmoneypd.Text = Session["tgmoney"].ToString();
                     DropDownList3.SelectedValue = Session["tyear"].ToString();
                     DropDownList1.SelectedValue = Session["tmonth"].ToString();
                     DropDownList2.SelectedValue = Session["tday"].ToString();
-                    txtremin.Text = Session["tremain"].ToString();
+                    txtcomplete.SelectedValue = Session["tremain"].ToString();
                     txtnotebk.Text = Session["tnotebk"].ToString();
                 }
 
@@ -76,13 +75,11 @@ namespace practising
                           ",[fname]" +
                           ",[location]" +
                           ",[haghulnashab]" +
-                          ",[Given money]" +
                           ",[year]" +
                           ",[month]" +
                           ",[day]" +
                           ",[remain]" +
                           ",[notebook]" +
-                          ",[Updated By]" +
                         ")" +
                         " VALUES" +
                         "(" +
@@ -91,26 +88,24 @@ namespace practising
                           "@tfname," +
                           "@tlocation," +
                           "@thaghulnashab," +
-                          "@tgmoney," +
                           "@tyear," +
                           "@tmonth," +
                           "@tday," +
                           "@tremain," +
-                          "@tnotebk," +
-                          "@up_by)";
+                          "@tnotebk)";
+                          //"@up_by)";
                     SqlCommand sqlcmd = new SqlCommand(query, sqlConn);
                     sqlcmd.Parameters.AddWithValue("@id", Session["id"].ToString());
                     sqlcmd.Parameters.AddWithValue("@tname", txtname.Text);
                     sqlcmd.Parameters.AddWithValue("@tfname", txtfname.Text);
                     sqlcmd.Parameters.AddWithValue("@tlocation", txtlocation.Text);
                     sqlcmd.Parameters.AddWithValue("@thaghulnashab", txtcmoney.Text);
-                    sqlcmd.Parameters.AddWithValue("@tgmoney", txtmoneypd.Text);
                     sqlcmd.Parameters.AddWithValue("@tyear", DropDownList3.SelectedValue);
                     sqlcmd.Parameters.AddWithValue("@tmonth", DropDownList1.SelectedValue);
                     sqlcmd.Parameters.AddWithValue("@tday", DropDownList2.Text);
-                    sqlcmd.Parameters.AddWithValue("@tremain", txtremin.Text);
+                    sqlcmd.Parameters.AddWithValue("@tremain", txtcomplete.SelectedValue);
                     sqlcmd.Parameters.AddWithValue("@tnotebk", txtnotebk.Text);
-                    sqlcmd.Parameters.AddWithValue("@up_by", username);
+                    //sqlcmd.Parameters.AddWithValue("@up_by", username);
                     //sqlCmd.ExecuteNonQuery();
                     sqlcmd.ExecuteNonQuery();
                     sqlConn.Close();
